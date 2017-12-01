@@ -6,3 +6,7 @@ Laravel - País, estados e cidades. Já populado com estados e cidades brasileir
 ### DER
 ![Image of Yaktocat](./assets/der.png)
 
+### CIDADES E ESTADOS DISPONÍVEIS
+* Brasil
+    * Todos estados e cidades
+
