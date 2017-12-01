@@ -4,7 +4,7 @@ Laravel - País, estados e cidades. Já populado com estados e cidades brasileir
 (!) PACOTE EM DESENVOLVIMENTO (!)
 
 ### DER
-![Image of Yaktocat](./assets/der.png)
+![Image of Blit Softwares](./assets/der.png)
 
 ### CIDADES E ESTADOS DISPONÍVEIS
 * Brasil
