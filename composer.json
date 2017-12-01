@@ -1,0 +1,29 @@
+{
+    "name": "blitsoftwares/laravel-states-and-cities",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lucas R.Pasquetto",
+            "email": "lucas@blitsoft.com.br",
+            "homepage": "http://www.blitsoft.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+      "psr-4": {
+        "Blit\\StatesAndCities\\": "./src",
+        "Blit\\StatesAndCities\\Seeds": "./src/Seeds"
+      }
+    },
+    "extra": {
+      "laravel":{
+        "providers": [
+          "Blit\\StatesAndCities\\Providers\\StatesAndCitiesServiceProvider"
+        ]
+      }
+    }
+}
