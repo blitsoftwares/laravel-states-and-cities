@@ -2,7 +2,7 @@
 
 return [
 
-    'states' => 'States',
+    'cities' => 'Cities',
     'new-register' => 'New register',
     'route-back' => 'Back',
     'action' => 'Action',
@@ -13,17 +13,16 @@ return [
 
     'fields' => [
         'country' => 'Country',
-        'name' => 'Name',
+        'state' => 'State',
         'code' => 'Code',
-        'ibge' => 'National Code',
+        'name' => 'Name',
     ],
 
     'table-header' => [
         'country' => 'Country',
-        'name' => 'Name',
+        'state' => 'State',
         'code' => 'Code',
-        'cities' => 'Cities',
-        'ibge' => 'National Code',
+        'name' => 'Name',
     ],
 
 ];

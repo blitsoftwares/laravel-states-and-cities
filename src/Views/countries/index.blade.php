@@ -11,6 +11,7 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>{{ trans('StatesAndCities::countries.table-header.name') }}</th>
                         <th>{{ trans('StatesAndCities::countries.table-header.code_iso2') }}</th>
                         <th>{{ trans('StatesAndCities::countries.table-header.code_iso3') }}</th>
@@ -23,6 +24,7 @@
                 <tbody>
                     @foreach($data as $obj)
                         <tr>
+                            <td>{{ $obj->id }}</td>
                             <td>{{ trans('StatesAndCities::countries.country.'.$obj->name) }}</td>
                             <td>{{ $obj->code_iso2 }}</td>
                             <td>{{ $obj->code_iso3 }}</td>

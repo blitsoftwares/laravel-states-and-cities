@@ -22,6 +22,7 @@ return [
         'country' => 'País',
         'name' => 'Nome',
         'code' => 'UF',
+        'cities' => 'Cidades',
         'ibge' => 'IBGE',
     ],
 

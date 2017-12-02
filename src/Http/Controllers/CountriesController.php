@@ -11,6 +11,7 @@ class CountriesController extends Controller {
     public function index()
     {
         $data = Country::all();
+
         return view('StatesAndCities::countries.index',['data'=>$data]);
     }
 
@@ -22,7 +23,6 @@ class CountriesController extends Controller {
     public function store(Request $request)
     {
         $input = $request->all();
-
         Country::create($input);
 
         return redirect(route('countries.index'));
@@ -38,9 +38,7 @@ class CountriesController extends Controller {
     public function update(Request $request, $id)
     {
         $input = $request->all();
-
         $country = Country::find($id);
-
         $country->update($input);
 
         return redirect(route('countries.index'));
@@ -49,6 +47,7 @@ class CountriesController extends Controller {
     public function destroy($id)
     {
         Country::destroy($id);
+
         return redirect(route('countries.index'));
     }
 

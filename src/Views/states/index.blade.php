@@ -11,9 +11,11 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>{{ trans('StatesAndCities::states.table-header.code') }}</th>
                         <th>{{ trans('StatesAndCities::states.table-header.name') }}</th>
                         <th>{{ trans('StatesAndCities::states.table-header.ibge') }}</th>
+                        <th>{{ trans('StatesAndCities::states.table-header.cities') }}</th>
                         <th>{{ trans('StatesAndCities::states.table-header.country') }}</th>
                         <th>{{ trans('StatesAndCities::states.action') }}</th>
                     </tr>
@@ -21,9 +23,11 @@
                 <tbody>
                     @foreach($data as $obj)
                         <tr>
+                            <td>{{ $obj->id }}</td>
                             <td>{{ $obj->code }}</td>
                             <td>{{ $obj->name }}</td>
                             <td>{{ $obj->ibge }}</td>
+                            <td>{{ $obj->cities()->count() }}</td>
                             <td>{{ $obj->country->code_iso2 }}</td>
                             <td>
                                 <form action="{{ route('states.destroy',$obj->id) }}" method="POST">
