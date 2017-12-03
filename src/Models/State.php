@@ -13,6 +13,11 @@ class State extends Model {
         'code'
     ];
 
+    public function scopeByCountry($query,$country)
+    {
+        return $query->where('country_id',$country);
+    }
+
     public function country()
     {
         return $this->belongsTo(Country::class);

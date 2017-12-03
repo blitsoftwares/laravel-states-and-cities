@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <script src="/js/blit-states-and-cities.js"></script>
     <a href="{{ route('cities.index') }}"><button class="btn btn-default">{{ trans('StatesAndCities::cities.route-back') }}</button></a>
     <hr/>
     <div class="panel panel-default">
@@ -14,21 +15,13 @@
                 <div class="form-group">
                     <label for="country_id" class="col-md-4 control-label">{{ trans('StatesAndCities::cities.fields.country') }}*</label>
                     <div class="col-md-2">
-                        <select name="country_id" id="country_id"  class="form-control country" required>
-                            @foreach($countries as $country)
-                                <option value="{{ $country->id }}">{{ $country->code_iso2 }} - {{ $country->name }}</option>
-                            @endforeach
-                        </select>
+                        <select name="country_id" id="country"  class="form-control" default="{{ config('states-and-cities.default-country') }}" required></select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="state_id" class="col-md-4 control-label">{{ trans('StatesAndCities::cities.fields.state') }}*</label>
                     <div class="col-md-2">
-                        <select name="state_id" default="5" id="state_id"  class="form-control state" required>
-                            @foreach($states as $state)
-                                <option value="{{ $state->id }}">{{ $state->code }} - {{ $state->name }}</option>
-                            @endforeach
-                        </select>
+                        <select name="state_id"  id="state" default="{{ config('states-and-cities.default-state') }}"  class="form-control state" required></select>
                     </div>
                 </div>
                 <div class="form-group">
@@ -53,23 +46,4 @@
             </form>
         </div>
     </div>
-    <script>
-        $(document).ready(function(){
-
-            var country_default = parseInt('{{ config('states-and-cities.default-country') }}');
-            if(country_default) {
-                $('.country').val(country_default);
-            }
-
-            $('.country').on('change',function(){
-
-            });
-
-            var state_default = parseInt('{{ config('states-and-cities.default-state') }}');
-            if(state_default) {
-                $('.state').val(state_default);
-            }
-
-        })
-    </script>
 @endsection

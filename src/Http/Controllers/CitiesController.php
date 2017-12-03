@@ -18,10 +18,7 @@ class CitiesController extends Controller
 
     public function create()
     {
-        $countries  = Country::all();
-        $states     = State::all();
-
-        return view('StatesAndCities::cities.create',['countries'=>$countries,'states'=>$states]);
+        return view('StatesAndCities::cities.create');
     }
 
     public function store(Request $request)
@@ -34,10 +31,9 @@ class CitiesController extends Controller
 
     public function edit($id)
     {
-        $countries  = Country::all();
-        $states     = State::all();
+        $city      = City::find($id);
 
-        return view('StatesAndCities::cities.edit',['countries'=>$countries,'states'=>$states]);
+        return view('StatesAndCities::cities.edit',['city'=>$city]);
     }
 
     public function update(Request $request, $id)

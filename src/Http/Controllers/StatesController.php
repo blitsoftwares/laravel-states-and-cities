@@ -16,6 +16,13 @@ class StatesController extends Controller
         return view('StatesAndCities::states.index',['data'=>$data]);
     }
 
+    public function getList($country_id)
+    {
+        $data = State::byCountry($country_id)->get();
+
+        return response()->json($data);
+    }
+
     public function create()
     {
         $countries = Country::all();
