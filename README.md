@@ -77,7 +77,7 @@ To publish the default configuration file and database migrations, execute the f
 - /states
 - /cities
 
-### 6. Javascript
+### 6. Javascript - (optional)
 To automate the select component follow 2 steps
 
 (!) This feature is already available and active in the package's native views (!)
