@@ -15,8 +15,7 @@
     },
     "autoload": {
       "psr-4": {
-        "Blit\\StatesAndCities\\": "./src",
-        "Blit\\StatesAndCities\\Seeds": "./src/Seeds"
+        "Blit\\StatesAndCities\\": "./src"
       }
     },
     "extra": {
