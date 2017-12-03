@@ -30,7 +30,9 @@
 ## Installation
 Using composer, execute the following command to automatically update your composer.json, using the corresponding package version:
  
- ```composer require blitsoftwares/laravel-states-and-cities```
+ ```
+ composer require blitsoftwares/laravel-states-and-cities
+ ```
  
  or manually update your composer.json file
  
