@@ -27,4 +27,14 @@
     - Autoload estados ao selecionar país - OK
     - Aulodoad cidades ao selecionar estado - TASK
 
+# Installation
+Using composer, execute the following command to automatically update your composer.json, using the corresponding package version:
+ ```composer require blitsoftwares/laravel-states-and-cities```
+ or manually update your composer.json file
+ ``` {
+         "require": {
+             "blitsoftwares/laravel-states-and-cities": "dev-master"
+         }
+     } ```
+
 
