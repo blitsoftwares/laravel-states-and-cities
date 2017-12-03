@@ -1,6 +1,6 @@
 {
     "name": "blitsoftwares/laravel-states-and-cities",
-    "description": "País, cidades e estados. Com código IBGE Brasil. Populado com seeder",
+    "description": "País, cidades e estados. Com código IBGE Brasil. Populado com seeder. SQL de dumps disponiveis na pasta 'sql'.",
     "type": "library",
     "license": "MIT",
     "authors": [
