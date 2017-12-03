@@ -1,6 +1,6 @@
 {
     "name": "blitsoftwares/laravel-states-and-cities",
-    "description": "País, cidades e estados. Com código IBGE Brasileiro. Laravel Brasil",
+    "description": "País, cidades e estados. Com código IBGE Brasil. Populado com seeder",
     "type": "library",
     "license": "MIT",
     "authors": [
