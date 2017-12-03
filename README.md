@@ -64,13 +64,13 @@ To publish the default configuration file and database migrations, execute the f
     
 #### List publicatoins
 - Lang
-	- /resources/lang/vendor/StatesAndCities
+	- resources/lang/vendor/StatesAndCities
 - Views
-	- /resources/views/vendor/StatesAndCities
+	- resources/views/vendor/StatesAndCities
 - Assets
-	- /public/vendor/StatesAndCities
+	- public/vendor/StatesAndCities
 - Config
-	- /config/states-and-cities.php
+	- config/states-and-cities.php
 	
 ### 5. Routes
 - /countries
