@@ -56,12 +56,12 @@ Execute the migrations, so that the tables on you database are created:
 ```
 php artisan migrate 
 ```
-###4. Publishing configuration file and migrations
+### 4. Publishing configuration file and migrations
 To publish the default configuration file and database migrations, execute the following command:
 
     php artisan vendor:publish --provider=Blit\\StatesAndCities\\Providers\\StatesAndCitiesServiceProvider
     
-#####List publicatoins
+#### List publicatoins
 - Lang
 	- /resources/lang/vendor/StatesAndCities
 - Views
