@@ -82,6 +82,8 @@ To automate the select component follow 2 steps
 
 (!) This feature is already available and active in the package's native views (!)
 
+Javascript knows component IDs (country, state, city) and performs scalar searches automatically when you select a country or state.
+
 6.1 - Add the available script to your layout
 ```
 <script src="/vendor/StatesAndCities/blit-states-and-cities.js"></script>
