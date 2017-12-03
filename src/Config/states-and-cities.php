@@ -18,6 +18,6 @@ return [
      * SET DEFAULT CITY USING PRIMARY_KEY
      * SEE # IN TABLE LIST
      */
-    "default-city" => "",
+    "default-city" => 5123,
 
 ];
