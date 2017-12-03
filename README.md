@@ -1,4 +1,4 @@
-# laravel-states-and-cities
+# laravel-states-and-cities - DEVELOPING PACKAGE
 
 - Laravel.
 - País, estados e cidades. 
