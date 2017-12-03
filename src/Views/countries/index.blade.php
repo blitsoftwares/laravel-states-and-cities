@@ -18,6 +18,7 @@
                         <th>{{ trans('StatesAndCities::countries.table-header.code_phone') }}</th>
                         <th>{{ trans('StatesAndCities::countries.table-header.lang') }}</th>
                         <th>{{ trans('StatesAndCities::countries.states') }}</th>
+                        <th>{{ trans('StatesAndCities::countries.cities') }}</th>
                         <th>{{ trans('StatesAndCities::countries.action') }}</th>
                     </tr>
                 </thead>
@@ -31,6 +32,7 @@
                             <td>{{ $obj->code_phone }}</td>
                             <td>{{ $obj->lang }}</td>
                             <td>{{ $obj->states()->count() }}</td>
+                            <td>{{ $obj->cities()->count() }}</td>
                             <td>
                                 <form action="{{ route('countries.destroy',$obj->id) }}" method="POST">
                                     <div class="btn-group btn-group-sm">

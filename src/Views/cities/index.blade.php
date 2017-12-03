@@ -42,6 +42,7 @@
 
                 </tbody>
             </table>
+            {!! $data->render() !!}
         </div>
     </div>
 @endsection

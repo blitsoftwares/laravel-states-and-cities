@@ -21,6 +21,7 @@ class StatesAndCitiesServiceProvider extends ServiceProvider
         $configDir      = __DIR__ . '/../Config/states-and-cities.php';
         $migrationsDir  = __DIR__ . '/../Migrations';
         $viewsDir       = __DIR__ . '/../Views';
+        $publicDir      = __DIR__ . '/../assets';
 
         Route::namespace("Blit\\StatesAndCities\\Http\\Controllers")
         ->middleware(['web'])
@@ -32,6 +33,7 @@ class StatesAndCitiesServiceProvider extends ServiceProvider
 
         $this->publishes([$langDir => resource_path('lang/vendor/StatesAndCities')],'laravel-states-and-cities-lang');
         $this->publishes([$viewsDir => resource_path('views/vendor/StatesAndCities')],'laravel-states-and-cities-views');
+        $this->publishes([$publicDir => public_path('vendor/StatesAndCities')],'laravel-states-and-cities-assets');
         $this->publishes([$configDir => config_path('states-and-cities.php')],'laravel-states-and-cities-config');
 
     }

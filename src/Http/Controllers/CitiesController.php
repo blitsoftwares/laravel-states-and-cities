@@ -12,7 +12,7 @@ class CitiesController extends Controller
 {
     public function index()
     {
-        $data = City::all();
+        $data = City::paginate(100);
         return view('StatesAndCities::cities.index',['data'=>$data]);
     }
 

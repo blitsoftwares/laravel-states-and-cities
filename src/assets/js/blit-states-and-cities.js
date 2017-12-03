@@ -1,3 +1,13 @@
+$(document).ready(function(){
+
+    $('#country').countries({
+        onChange: function(country_id){
+            $('#state').ufs({country_id: country_id});
+        }
+    });
+
+})
+
 (function ( $ ) {
 
     $.fn.countries = function(options) {
@@ -6,17 +16,19 @@
 
         var settings = $.extend({
             'default': select.attr('default'),
-            'onChange': function(uf){}
+            'onChange': function(id){}
         }, options );
 
-        $.get("/ufs", null, function (json) {
+        $.get("/countries-list", null, function (json) {
 
+            select.empty();
             $.each(json, function (key, value) {
-                select.append('<option value="' + value.id + '" '+(settings.default==value.id?'selected':'')+'>' + value.abbreviation + '</option>');
+                select.append('<option value="' + value.id + '" '+(settings.default==value.id?'selected':'')+'>' + value.code_iso2 + ' - ' + value.name + '</option>');
             })
 
             settings.onChange(select.val());
             $('select').selectpicker('refresh');
+
 
         }, 'json');
 
@@ -35,10 +47,11 @@
             'onChange': function(uf){}
         }, options );
 
-        $.get("/ufs", null, function (json) {
+        $.get("/states-list/"+options.country_id, null, function (json) {
 
+            select.empty();
             $.each(json, function (key, value) {
-                select.append('<option value="' + value.id + '" '+(settings.default==value.id?'selected':'')+'>' + value.abbreviation + '</option>');
+                select.append('<option value="' + value.id + '" '+(settings.default==value.id?'selected':'')+'>' + value.name + '</option>');
             })
 
             settings.onChange(select.val());

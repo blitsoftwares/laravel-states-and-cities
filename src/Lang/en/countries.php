@@ -7,6 +7,7 @@ return [
     'route-back' => 'Back',
     'action' => 'Action',
     'states' => 'States',
+    'cities' => 'Cities',
 
     'submit' => 'Save',
     'edit' => 'Edit',
