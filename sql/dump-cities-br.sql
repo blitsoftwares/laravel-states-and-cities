@@ -1,4 +1,15 @@
 
+CREATE TABLE `cities` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `state_id` int(11) NOT NULL,
+  `code` bigint(20) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5571 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
 INSERT INTO `cities` (`id`,`state_id`,`code`,`name`,`created_at`,`updated_at`) VALUES (1,22,1100015,'Alta Floresta Do Oeste','2017-12-03 17:21:19','2017-12-03 17:21:19');
 INSERT INTO `cities` (`id`,`state_id`,`code`,`name`,`created_at`,`updated_at`) VALUES (2,22,1100023,'Ariquemes','2017-12-03 17:21:19','2017-12-03 17:21:19');
 INSERT INTO `cities` (`id`,`state_id`,`code`,`name`,`created_at`,`updated_at`) VALUES (3,22,1100031,'Cabixi','2017-12-03 17:21:19','2017-12-03 17:21:19');
