@@ -10,7 +10,6 @@ CREATE TABLE `states` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-
 INSERT INTO `states` (`id`,`country_id`,`ibge`,`code`,`name`,`created_at`,`updated_at`) VALUES (1,1,12,'AC','Acre','2017-12-03 17:20:11','2017-12-03 17:20:11');
 INSERT INTO `states` (`id`,`country_id`,`ibge`,`code`,`name`,`created_at`,`updated_at`) VALUES (2,1,27,'AL','Alagoas','2017-12-03 17:20:11','2017-12-03 17:20:11');
 INSERT INTO `states` (`id`,`country_id`,`ibge`,`code`,`name`,`created_at`,`updated_at`) VALUES (3,1,16,'AP','Amapá','2017-12-03 17:20:11','2017-12-03 17:20:11');
