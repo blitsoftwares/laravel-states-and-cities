@@ -98,7 +98,9 @@ for countries
 
 for states
 ```
-<select name="state_id"  id="state" default="{{ config('states-and-cities.default-state') }}"  class="form-control state" required></select>
+<select name="state_id"  id="state" default="{{ config('states-and-cities.default-state') }}"  class="form-control" required></select>
 ```
 
+for cities
+- This feature is under development
 
