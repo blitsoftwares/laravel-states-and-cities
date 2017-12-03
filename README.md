@@ -10,7 +10,22 @@
 ### DER - RELATIONAL ENTITY DIAGRAM
 ![Image of Blit Softwares](./assets/der.png)
 
-### CIDADES E ESTADOS DISPONÍVEIS
-* Brasil
-    * Todos estados e cidades
+## CONOGRAMA
+
+- CRUD 
+    - Paises - OK
+    - Estados - OK
+    - Cidades - OK
+    - Endereços - TASK
+
+- SEEDER 
+    - País Brasil - OK
+    - Estados BR - OK
+    - Cidades BR - OK
+
+- JAVASCRIPT 
+    - Autoload países - OK
+    - Autoload estados ao selecionar país - OK
+    - Aulodoad cidades ao selecionar estado - TASK
+
 
