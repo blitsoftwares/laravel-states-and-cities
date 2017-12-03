@@ -5,6 +5,10 @@ return [
     /*
      * In these settings you can set the default country,
      * state and city for the selected fields.
+     *
+     * - default-country
+     * - default-state
+     * - default-city
      */
 
     /*
