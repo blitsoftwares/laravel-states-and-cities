@@ -9,7 +9,7 @@
 ### DER - RELATIONAL ENTITY DIAGRAM
 ![Image of Blit Softwares](./assets/der.png)
 
-## CONOGRAMA
+## CRONOGRAMA
 
 - CRUD 
     - Paises - OK
