@@ -104,3 +104,14 @@ for states
 for cities
 - This feature is under development
 
+## Informations
+
+This package is being developed by the team of Blit Softwares.
+
+Make a FORK help us to implement new countries, send your PR
+
+- Contact
+    - Lucas R. Pasquetto <lucas@blitsoft.com.br>
+    - http://blitsoft.com.br
+
+
