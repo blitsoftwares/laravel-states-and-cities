@@ -71,5 +71,10 @@ To publish the default configuration file and database migrations, execute the f
 	- /public/vendor/StatesAndCities
 - Config
 	- /config/states-and-cities.php
+	
+### 5. Routes
+- /countries
+- /states
+- /cities
 
 
