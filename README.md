@@ -62,7 +62,7 @@ To publish the default configuration file and database migrations, execute the f
 
     php artisan vendor:publish --provider=Blit\\StatesAndCities\\Providers\\StatesAndCitiesServiceProvider
     
-#### List publicatoins
+#### List publications
 - Lang
 	- resources/lang/vendor/StatesAndCities
 - Views
@@ -76,5 +76,27 @@ To publish the default configuration file and database migrations, execute the f
 - /countries
 - /states
 - /cities
+
+### 6. Javascript
+To automate the select component follow 2 steps
+
+(!) This feature is already available and active in the package's native views (!)
+
+6.1 - Add the available script to your layout
+```
+<script src="/vendor/StatesAndCities/blit-states-and-cities.js"></script>
+```
+
+6.2 - add the components
+
+for countries
+```
+<select name="country_id" id="country"  class="form-control" default="{{ config('states-and-cities.default-country') }}" required></select>
+```
+
+for states
+```
+<select name="state_id"  id="state" default="{{ config('states-and-cities.default-state') }}"  class="form-control state" required></select>
+```
 
 
