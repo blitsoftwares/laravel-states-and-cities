@@ -74,7 +74,7 @@ To publish the default configuration file and database migrations, execute the f
 - Config
 	- config/states-and-cities.php
 	
-### 5. Routes
+### 5. Routes available
 - /countries
 - /states
 - /cities
