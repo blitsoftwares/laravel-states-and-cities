@@ -1,71 +1,69 @@
-# laravel-states-and-cities - DEVELOPING PACKAGE
+# laravel-states-and-cities
 
 - Laravel.
 - País, estados e cidades. 
 - Já populado com estados e cidades brasileiras com código do IBGE
 
-### (!) PACOTE EM DESENVOLVIMENTO / DEVELOPING PACKAGE (!)
-
 ### DER - RELATIONAL ENTITY DIAGRAM
 ![Image of Blit Softwares](./assets/der.png)
 
-## CRONOGRAMA
+## Instalação
 
-- CRUD 
-    - Paises - OK
-    - Estados - OK
-    - Cidades - OK
-    - Endereços - TASK
-
-- SEEDER 
-    - País Brasil - OK
-    - Estados BR - OK
-    - Cidades BR - OK
-
-- JAVASCRIPT 
-    - Autoload países - OK
-    - Autoload estados ao selecionar país - OK
-    - Aulodoad cidades ao selecionar estado - TASK
-
-## Installation
-Using composer, execute the following command to automatically update your composer.json, using the corresponding package version:
+Via composer
  
- ```
- composer require blitsoftwares/laravel-states-and-cities
- ```
+```
+composer require blitsoftwares/laravel-states-and-cities
+```
  
- or manually update your composer.json file
+ ou manualmente adicione no seu composer.json
  
- ```
- {
-   "require": {
-   	"blitsoftwares/laravel-states-and-cities": "dev-master"
-   }
- } 
-  ```
+```
+{
+    "require": {
+    "blitsoftwares/laravel-states-and-cities": "dev-master"
+    }
+} 
+```
   
 ### 2. Provider
-If you are using Laravel 5.5+ skip this section since our package support auto-discovery.
 
-You need to update your application configuration in order to register the package, so it can be loaded by Laravel. Just update your config/app.php file adding the following code at the end of your 'providers' section:
+Se você está usando Laravel 5.5+ pule esta sessão, pois nosso pacote possui suporte à auto-discovery.
 
 ```
 'providers' => [
         Blit\StatesAndCities\Providers\StatesAndCitiesServiceProvider::class,
     ],
 ```
+
 ### 3. Migration
-Execute the migrations, so that the tables on you database are created:
+
+Execute as migrações, as tabelas serão criadas em seu banco de dados;
 ```
 php artisan migrate 
 ```
-### 4. Publishing configuration, language, assets and views files
-To publish the default configuration file and database migrations, execute the following command:
 
-    php artisan vendor:publish --provider=Blit\\StatesAndCities\\Providers\\StatesAndCitiesServiceProvider
+### 4. Seeder
+
+Atualmente está disponível via seeder o Brasil, com todos os estados e cidades.
+Estados e cidades possuem código do IBGE
+
+Quem desejar contribuir na implementação de novos países, fique à vontade, faça o fork, implemente os seeds e envie seu PullRequest.
+
+```
+php artisan db:seed --class=Blit\\StatesAndCities\\Seeds\\DatabaseSeeder 
+```
+
+### 5. Publish
+
+Publique os arquivos do pacote:
+
+```
+php artisan vendor:publish --provider=Blit\\StatesAndCities\\Providers\\StatesAndCitiesServiceProvider
+```
     
-#### List publications
-- Lang
+#### Arquivos a serem publicados
+
+- Lang (traduções)
 	- resources/lang/vendor/StatesAndCities
 - Views
 	- resources/views/vendor/StatesAndCities
@@ -74,51 +72,105 @@ To publish the default configuration file and database migrations, execute the f
 - Config
 	- config/states-and-cities.php
 	
-### 5. Routes available
+### 6. Routes 
+
+Rotas disponíveis
+
 - /countries
 - /states
 - /cities
+- /addresses
 
-### 6. Javascript
-To automate the select component follow 2 steps
+### 7. Javascript
 
-(!) This feature is already available and active in the package's native views (!)
+Para que os selects entre países, estados e cidades fiquem dinâmicos, é necessário adicionar o JS do pacote, juntamente com o jquery.mask
+para que o campo de CEP fique com máscara.
 
-Javascript knows component IDs (country, state, city) and performs scalar searches automatically when you select a country or state.
-
-6.1 - Add the available script to your layout
+6.1 - Adicione no fim do seu layout (template)
 ```
 <script src="//oss.maxcdn.com/jquery.mask/1.11.4/jquery.mask.min.js"></script>
 <script src="/vendor/StatesAndCities/js/blit-states-and-cities.js"></script>
 ```
 
-###  - optional
+### Manualmente
 
-6.2 - add the components
+Caso você esteja integrar países, cidades e estados em seu formulário, basta adicionar os selects abaixo.
 
-for countries
+Não mude o ID do componente, pois o JS usa ele para fazer os loads. 
+O atributo NAME pode ser personalizado conforme sua tabela de endereços.
+
+Para países (necessário para load de estados)
 ```
 <select name="country_id" id="country" data-default="{{ config('states-and-cities.default-country') }}"></select>
 ```
 
-for states
+Para estados (necessário para o load de cidades)
 ```
-<select name="state_id"  id="state" data-default="{{ config('states-and-cities.default-state') }}"></select>
-```
-
-for cities
-```
-<select name="city_id"  id="city" data-default="{{ config('states-and-cities.default-city') }}"></select>
+<select name="state_id" id="state" data-default="{{ config('states-and-cities.default-state') }}"></select>
 ```
 
-## Informations
+Para cidades
+```
+<select name="city_id" id="city" data-default="{{ config('states-and-cities.default-city') }}"></select>
+```
 
-This package is being developed by the team of Blit Softwares.
+Para CEP
+```
+<input name="postal_code" id="postal_code" data-autocomplete="true" data-mask="{{ config('states-and-cities.postal_code_mask') }}" type="text" }}">
+```
 
-Make a FORK help us to implement new countries, send your PR
+### Configurações
 
-- Contact
-    - Lucas R. Pasquetto <lucas@blitsoft.com.br>
+Na pasta config do laravel, se encontra publicado o arquivo de configuração do pacote:
+
+- states-and-cities.php
+
+Nele possi algumas variáveis que pode ser personalizada conforme sua necessidade:
+
+- default-country :: País padrão para o auto load
+- default-state :: Estado padrão para o auto load
+- default-city :: Cidade padrão para o auto load
+- postal_code_mask :: Padrão para máscara do CEP usando nosso componente
+
+### Auto preenchar com CEP digitado
+
+O pacote está integrado com VIACEP. 
+Para utilizar, use o componente de CEP na sessão MANUALMENTE e adicione os campos de endereços com os IDs abaixo:
+
+Para logradouro:
+```
+<input id="street" >
+```
+
+Para bairro:
+```
+<input id="district" >
+```
+
+Os seletores automáticos para estado e cidade após uma consulta do CEP, ainda será implementado.
+
+## Traduções
+
+As views de cadastros nativas de países, estados, cidades e endereços, estão integradas com o LANG do laravel.
+Idiomas disponívies
+
+- Portugues Brasil (pt-br)
+- Inglês (en)
+
+Os arquivos estão disponíveis na pasta:
+
+- resources/lang/vendor/StatesAndCities
+
+Configure o locale do seu laravel.
+
+## Informações
+
+Este pacote é mantido pela equipe de desenvolvedores da Blit Softwares.
+
+Faça um fork e nos ajude com novidades e eventuais falhas.
+
+- Contato
+    - Blit Softwares <falecom@blitsoft.com.br>
     - http://blitsoft.com.br
 
 
