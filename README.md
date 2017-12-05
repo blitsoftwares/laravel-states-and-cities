@@ -20,7 +20,7 @@ composer require blitsoftwares/laravel-states-and-cities
 ```
 {
     "require": {
-    "blitsoftwares/laravel-states-and-cities": "dev-master"
+    "blitsoftwares/laravel-states-and-cities": "~1.0"
     }
 } 
 ```
