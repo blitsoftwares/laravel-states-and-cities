@@ -98,16 +98,18 @@ Javascript knows component IDs (country, state, city) and performs scalar search
 
 for countries
 ```
-<select name="country_id" id="country"  class="form-control" default="{{ config('states-and-cities.default-country') }}" required></select>
+<select name="country_id" id="country" data-default="{{ config('states-and-cities.default-country') }}"></select>
 ```
 
 for states
 ```
-<select name="state_id"  id="state" default="{{ config('states-and-cities.default-state') }}"  class="form-control" required></select>
+<select name="state_id"  id="state" data-default="{{ config('states-and-cities.default-state') }}"></select>
 ```
 
 for cities
-- This feature is under development
+```
+<select name="city_id"  id="city" data-default="{{ config('states-and-cities.default-city') }}"></select>
+```
 
 ## Informations
 

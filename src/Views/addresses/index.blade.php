@@ -24,11 +24,16 @@
                     @foreach($data as $obj)
                         <tr>
                             <td>{{ $obj->id }}</td>
-                            <td>{{ $obj->street }}</td>
+                            <td>
+                                {{ $obj->street }}
+                                @if($obj->name || $obj->complement)<br/>@endif
+                                @if($obj->complement)<small>{{ $obj->complement }}</small>@endif
+                                @if($obj->name)<small>*{{ $obj->name }}</small>@endif
+                            </td>
                             <td>{{ $obj->number }}</td>
                             <td>{{ $obj->district }}</td>
                             <td>{{ $obj->postal_code }}</td>
-                            <td>{{ $obj->city->name }}</td>
+                            <td>{{ $obj->city->name }}/{{ $obj->city->state->code }}</td>
                             <td>
                                 <form action="{{ route('addresses.destroy',$obj->id) }}" method="POST">
                                     <div class="btn-group btn-group-sm">

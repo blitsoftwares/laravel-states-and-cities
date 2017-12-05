@@ -12,14 +12,37 @@
             <form class="form-group" method="POST" action="{{ route('addresses.store') }}">
                 {{ csrf_field() }}
 
+
+
                 <div class="form-group col-md-2">
-                    <label for="name" class="control-label">{{ trans('StatesAndCities::addresses.fields.name') }}*</label>
-                    <input id="name" name="name" type="text" class="form-control"  value="{{ old('name') }}" required>
+                    <label for="postal_code" class="control-label">{{ trans('StatesAndCities::addresses.fields.postal_code') }}</label>
+                    <input id="postal_code" name="postal_code" data-autocomplete="true" data-mask="{{ config('states-and-cities.postal_code_mask') }}" type="text" class="form-control"  value="{{ old('postal_code') }}">
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="street" class="control-label">{{ trans('StatesAndCities::addresses.fields.street') }}</label>
+                    <input id="street" name="street"  type="text" class="form-control"  value="{{ old('street') }}">
+                </div>
+
+                <div class="form-group col-md-1">
+                    <label for="number" class="control-label">{{ trans('StatesAndCities::addresses.fields.number') }}</label>
+                    <input id="number" name="number"  type="text" class="form-control"  value="{{ old('number') }}">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="district" class="control-label">{{ trans('StatesAndCities::addresses.fields.district') }}</label>
+                    <input id="district" name="district"  type="text" class="form-control"  value="{{ old('district') }}">
                 </div>
 
                 <div class="form-group col-md-2">
-                    <label for="postal_code" class="control-label">{{ trans('StatesAndCities::addresses.fields.postal_code') }}*</label>
-                    <input id="postal_code" name="postal_code" data-mask="{{ config('states-and-cities.postal_code_mask') }}" type="text" class="form-control"  value="{{ old('postal_code') }}" required>
+                    <label for="complement" class="control-label">{{ trans('StatesAndCities::addresses.fields.complement') }}</label>
+                    <input id="complement" name="complement"  type="text" class="form-control"  value="{{ old('complement') }}">
+                </div>
+
+
+                <div class="form-group col-md-2">
+                    <label for="name" class="control-label">{{ trans('StatesAndCities::addresses.fields.name') }}</label>
+                    <input id="name" name="name" type="text" class="form-control"  value="{{ old('name') }}">
                 </div>
 
                 <div class="form-group col-md-2">

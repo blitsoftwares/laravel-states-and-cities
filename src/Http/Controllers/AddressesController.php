@@ -29,16 +29,16 @@ class AddressesController extends Controller
 
     public function edit($id)
     {
-        $city      = Address::find($id);
+        $address      = Address::find($id);
 
-        return view('StatesAndCities::addresses.edit',['city'=>$city]);
+        return view('StatesAndCities::addresses.edit',['address'=>$address]);
     }
 
     public function update(Request $request, $id)
     {
         $input   = $request->all();
-        $country = Address::find($id);
-        $country->update($input);
+        $address = Address::find($id);
+        $address->update($input);
 
         return redirect(route('addresses.index'));
     }

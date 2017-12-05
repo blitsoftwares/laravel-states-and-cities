@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    var cmp_postal_code = $('#postal_code');
+    cmp_postal_code.mask(cmp_postal_code.attr('data-mask'));
+
     $('#country').countries({
         onChange: function(country_id){
             $('#state').ufs({
@@ -11,7 +14,54 @@ $(document).ready(function(){
         }
     });
 
+    if(cmp_postal_code.attr('data-autocomplete'))
+    {
+        cmp_postal_code.findAddressByCep()
+    }
+
 })
+
+$.fn.findAddressByCep = function() {
+    var input = $(this);
+
+    var settings = $.extend({
+        'onBlur': function(){
+            $('#street').val('loading...');
+            $('#district').val('loading...');
+
+            var postal_code = input.val().toString().replace('-','');
+
+            $.get("http://viacep.com.br/ws/"+postal_code+"/json/", null, function (json) {
+
+                /**
+                 *   RETURN VIACEP.COM.BR FOR BRAZIL
+                 *
+                 *   {
+                 *     "cep": "01001-000",
+                 *     "logradouro": "Praça da Sé",
+                 *     "complemento": "lado ímpar",
+                 *     "bairro": "Sé",
+                 *     "localidade": "São Paulo",
+                 *     "uf": "SP",
+                 *     "unidade": "",
+                 *     "ibge": "3550308",
+                 *     "gia": "1004"
+                 *   }
+                 */
+
+                $('#street').val(json.logradouro);
+                $('#district').val(json.bairro);
+                $('#number').focus();
+
+            }, 'json');
+        }
+    });
+
+    input.blur(function(){
+        settings.onBlur(input.val());
+    });
+
+}
 
 $.fn.countries = function(options) {
 
