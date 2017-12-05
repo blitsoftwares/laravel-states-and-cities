@@ -26,6 +26,12 @@
                         <select name="state_id"  id="state" data-default="{{ $city->state->id }}"  class="form-control state" required></select>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="city_id" class="col-md-4 control-label">{{ trans('StatesAndCities::addresses.fields.city') }}*</label>
+                    <div class="col-md-2">
+                        <select name="city_id"  id="city" data-default="{{ $city->state->id }}"  class="form-control state" required></select>
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <label for="name" class="col-md-4 control-label">{{ trans('StatesAndCities::cities.fields.code') }}*</label>

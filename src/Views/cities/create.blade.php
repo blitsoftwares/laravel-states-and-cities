@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <script src="/js/blit-states-and-cities.js"></script>
     <a href="{{ route('cities.index') }}"><button class="btn btn-default">{{ trans('StatesAndCities::cities.route-back') }}</button></a>
     <hr/>
     <div class="panel panel-default">
@@ -15,13 +14,13 @@
                 <div class="form-group">
                     <label for="country_id" class="col-md-4 control-label">{{ trans('StatesAndCities::cities.fields.country') }}*</label>
                     <div class="col-md-2">
-                        <select name="country_id" id="country"  class="form-control" default="{{ config('states-and-cities.default-country') }}" required></select>
+                        <select name="country_id" id="country"  class="form-control" data-default="{{ config('states-and-cities.default-country') }}" required></select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="state_id" class="col-md-4 control-label">{{ trans('StatesAndCities::cities.fields.state') }}*</label>
                     <div class="col-md-2">
-                        <select name="state_id"  id="state" default="{{ config('states-and-cities.default-state') }}"  class="form-control state" required></select>
+                        <select name="state_id"  id="state" data-default="{{ config('states-and-cities.default-state') }}"  class="form-control state" required></select>
                     </div>
                 </div>
                 <div class="form-group">

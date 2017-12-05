@@ -79,7 +79,7 @@ To publish the default configuration file and database migrations, execute the f
 - /states
 - /cities
 
-### 6. Javascript - (optional)
+### 6. Javascript
 To automate the select component follow 2 steps
 
 (!) This feature is already available and active in the package's native views (!)
@@ -88,8 +88,11 @@ Javascript knows component IDs (country, state, city) and performs scalar search
 
 6.1 - Add the available script to your layout
 ```
-<script src="/vendor/StatesAndCities/blit-states-and-cities.js"></script>
+<script src="//oss.maxcdn.com/jquery.mask/1.11.4/jquery.mask.min.js"></script>
+<script src="/vendor/StatesAndCities/js/blit-states-and-cities.js"></script>
 ```
+
+###  - optional
 
 6.2 - add the components
 

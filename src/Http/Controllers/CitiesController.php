@@ -4,8 +4,6 @@ namespace Blit\StatesAndCities\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Blit\StatesAndCities\Models\City;
-use Blit\StatesAndCities\Models\Country;
-use Blit\StatesAndCities\Models\State;
 use Illuminate\Http\Request;
 
 class CitiesController extends Controller
@@ -14,6 +12,13 @@ class CitiesController extends Controller
     {
         $data = City::paginate(100);
         return view('StatesAndCities::cities.index',['data'=>$data]);
+    }
+
+    public function getList($state_id)
+    {
+        $data = City::byState($state_id)->get();
+
+        return response()->json($data);
     }
 
     public function create()

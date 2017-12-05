@@ -12,6 +12,11 @@ class City extends Model {
         'name'
     ];
 
+    public function scopeByState($query,$state)
+    {
+        return $query->where('state_id',$state);
+    }
+
     public function state()
     {
         return $this->belongsTo(State::class);

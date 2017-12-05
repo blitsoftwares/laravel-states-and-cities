@@ -15,7 +15,7 @@ return [
      * SET DEFAULT COUNTRY USING PRIMARY_KEY
      * SEE # IN TABLE LIST
      *
-     * default is 1 - Brazil
+     * default is 1 - Brazil (BR)
      */
     "default-country" => 1,
 
@@ -23,7 +23,7 @@ return [
      * SET DEFAULT STATE USING PRIMARY_KEY
      * SEE # IN TABLE LIST
      *
-     * default is 12 - Mato Grosso do Sul
+     * default is 12 - Mato Grosso do Sul (MS)
      */
     "default-state" => 12,
 
@@ -35,4 +35,9 @@ return [
      */
     "default-city" => 5123,
 
+    /*
+     * MASKS
+     */
+
+    "postal_code_mask" => "99999-999"
 ];

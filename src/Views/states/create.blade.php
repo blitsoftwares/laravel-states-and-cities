@@ -14,11 +14,7 @@
                 <div class="form-group">
                     <label for="code_iso2" class="col-md-4 control-label">{{ trans('StatesAndCities::states.fields.country') }}*</label>
                     <div class="col-md-2">
-                        <select name="country_id" id="country_id"  class="form-control">
-                            @foreach($countries as $country)
-                                <option value="{{ $country->id }}">{{ $country->code_iso2 }} - {{ $country->name }}</option>
-                            @endforeach
-                        </select>
+                        <select name="country_id" id="country"  class="form-control" data-default="{{ config('states-and-cities.default-country') }}" required></select>
                     </div>
                 </div>
                 <div class="form-group">
