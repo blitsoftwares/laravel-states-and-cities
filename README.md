@@ -4,6 +4,17 @@
 - País, estados e cidades. 
 - Já populado com estados e cidades brasileiras com código do IBGE
 
+### Tasks
+
+Lista de prioridades de novas implementações
+
+- Traid e contrato
+    - Criar uma traid para que qualquer model (empresa,pessoa,fornecedores) possua endereços atraves de uma tabela pivo dinamica.
+- Melhorar o script JS
+    - Consulta de CEP para selecionar estado e cidade automaticamente ao retornar o endereço do cep digitado.
+    
+Ajude-nos! Vamos fazer isso juntos, faça seu fork!
+
 ### DER - RELATIONAL ENTITY DIAGRAM
 ![Image of Blit Softwares](./assets/der.png)
 
