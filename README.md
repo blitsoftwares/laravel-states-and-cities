@@ -134,7 +134,7 @@ Nele possi algumas variáveis que pode ser personalizada conforme sua necessidad
 
 Os valores a serem adicionados nas 3 primeiras variáveis são os IDs da sua respectiva tabela, acesse as rotas e olhe a coluna # que possui os ids dos registros.
 
-### Auto preenchar com CEP digitado
+### Auto preencher com CEP digitado
 
 O pacote está integrado com VIACEP. 
 Para utilizar, use o componente de CEP na sessão MANUALMENTE e adicione os campos de endereços com os IDs abaixo:
