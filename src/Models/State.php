@@ -28,4 +28,9 @@ class State extends Model {
        return $this->hasMany(City::class);
     }
 
+    public function addresses()
+    {
+        return $this->hasManyThrough(Address::class,City::class);
+    }
+
 }
