@@ -1,6 +1,5 @@
 # laravel-states-and-cities
 
-
 - Laravel.
 - País, estados e cidades. 
 - Já populado com estados e cidades brasileiras com código do IBGE
@@ -32,7 +31,7 @@ composer require blitsoftwares/laravel-states-and-cities
 ```
 {
     "require": {
-    "blitsoftwares/laravel-states-and-cities": "~1.0"
+    "blitsoftwares/laravel-states-and-cities": "dev-master"
     }
 } 
 ```
