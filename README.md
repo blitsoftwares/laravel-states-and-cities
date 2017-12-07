@@ -20,7 +20,7 @@ Ajude-nos! Vamos fazer isso juntos, faça seu fork!
 
 ## Instalação
 
-Edite seu composer para instalar versoes dev
+Edite seu composer para instalar versoes dev.
 ``` 
 "minimum-stability": "dev"
 ```
