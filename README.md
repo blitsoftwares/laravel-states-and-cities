@@ -23,7 +23,7 @@ Ajude-nos! Vamos fazer isso juntos, faça seu fork!
 Edite seu composer para instalar versoes dev
 ``` 
 "minimum-stability": "dev"
-
+```
 
 Via composer
  
