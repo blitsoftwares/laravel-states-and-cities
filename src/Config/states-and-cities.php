@@ -39,5 +39,10 @@ return [
      * MASKS
      */
 
-    "postal_code_mask" => "99999-999"
+    "postal_code_mask" => "99999-999",
+
+    /*
+     * ROUTES MIDDLEWARE
+     */
+    "route_middleware" => ['web','auth']
 ];

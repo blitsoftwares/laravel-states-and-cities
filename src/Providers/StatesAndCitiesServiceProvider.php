@@ -24,7 +24,7 @@ class StatesAndCitiesServiceProvider extends ServiceProvider
         $publicDir      = __DIR__ . '/../assets';
 
         Route::namespace("Blit\\StatesAndCities\\Http\\Controllers")
-        ->middleware(['web'])
+        ->middleware(config('states-and-cities.route_middleware'))
         ->group($routeDir);
 
         $this->loadMigrationsFrom($migrationsDir);

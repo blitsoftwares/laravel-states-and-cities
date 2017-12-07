@@ -179,7 +179,6 @@ Configure o locale do seu laravel.
 ## Informações
 
 Este pacote é mantido pela equipe de desenvolvedores da Blit Softwares.
-
 Faça um fork e nos ajude com novidades e eventuais falhas.
 
 - Contato
