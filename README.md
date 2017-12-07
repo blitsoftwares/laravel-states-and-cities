@@ -142,6 +142,7 @@ Nele possi algumas variáveis que pode ser personalizada conforme sua necessidad
 - default-state :: Estado padrão para o auto load
 - default-city :: Cidade padrão para o auto load
 - postal_code_mask :: Padrão para máscara do CEP usando nosso componente
+- routes_middleware :: Middleware para as rotas
 
 Os valores a serem adicionados nas 3 primeiras variáveis são os IDs da sua respectiva tabela, acesse as rotas e olhe a coluna # que possui os ids dos registros.
 
