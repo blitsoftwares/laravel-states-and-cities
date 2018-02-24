@@ -42,7 +42,12 @@ return [
     "postal_code_mask" => "99999-999",
 
     /*
-     * ROUTES MIDDLEWARE
+     * ROUTES MIDDLEWARE WEB
      */
-    "route_middleware" => ['web','auth']
+    "route_middleware" => ['web','auth'],
+
+    /*
+     * ROUTES MIDDLEWARE API
+     */
+    "route_middleware_api" => ['api']
 ];

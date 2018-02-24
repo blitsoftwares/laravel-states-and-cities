@@ -16,21 +16,41 @@ class StatesAndCitiesServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        /*
+         *  VARS
+         */
         $langDir        = __DIR__ . '/../Lang';
         $routeDir       = __DIR__ . '/../Routes/web.php';
+        $routeApiDir    = __DIR__ . '/../Routes/api.php';
         $configDir      = __DIR__ . '/../Config/states-and-cities.php';
         $migrationsDir  = __DIR__ . '/../Migrations';
         $viewsDir       = __DIR__ . '/../Views';
         $publicDir      = __DIR__ . '/../assets';
 
+        /*
+         *  ROUTES WEB
+         */
         Route::namespace("Blit\\StatesAndCities\\Http\\Controllers")
         ->middleware(config('states-and-cities.route_middleware'))
         ->group($routeDir);
 
+        /*
+         *  ROUTES API
+         */
+        Route::namespace("Blit\\StatesAndCities\\Http\\Controllers\Api\V1")
+            ->middleware(config('states-and-cities.route_middleware_api'))
+            ->group($routeApiDir);
+
+        /*
+         * LOAD RESOURCES
+         */
         $this->loadMigrationsFrom($migrationsDir);
         $this->loadTranslationsFrom($langDir,'StatesAndCities');
         $this->loadViewsFrom($viewsDir,'StatesAndCities');
 
+        /*
+         * PUBLISHER DATA
+         */
         $this->publishes([$langDir => resource_path('lang/vendor/StatesAndCities')],'laravel-states-and-cities-lang');
         $this->publishes([$viewsDir => resource_path('views/vendor/StatesAndCities')],'laravel-states-and-cities-views');
         $this->publishes([$publicDir => public_path('vendor/StatesAndCities')],'laravel-states-and-cities-assets');
@@ -40,6 +60,9 @@ class StatesAndCitiesServiceProvider extends ServiceProvider
 
     public function register()
     {
+        /*
+         *  MERGE CONFIG
+         */
         $this->mergeConfigFrom(__DIR__ . '/../Config/states-and-cities.php','states-and-cities');
     }
 }
