@@ -20,44 +20,25 @@ class CitiesApiV1Controller extends Controller
         return $data;
     }
 
-    public function getList($state_id)
+    public function show(City $city)
     {
-
-        return response()->json($data);
-    }
-
-    public function create()
-    {
-        return view('StatesAndCities::cities.create');
+        return $city;
     }
 
     public function store(Request $request)
     {
-        $input = $request->all();
-        City::create($input);
-
-        return redirect(route('cities.index'));
-    }
-
-    public function edit($id)
-    {
-        $city      = City::find($id);
-
-        return view('StatesAndCities::cities.edit',['city'=>$city]);
+        return City::create($request->all());
     }
 
     public function update(Request $request, $id)
     {
-        $input   = $request->all();
-        $country = City::find($id);
-        $country->update($input);
-
-        return redirect(route('cities.index'));
+        $city = City::find($id);
+        $city->update( $request->all());
+        return $city;
     }
 
     public function destroy($id)
     {
-        City::destroy($id);
-        return redirect(route('cities.index'));
+        return City::destroy($id);
     }
 }

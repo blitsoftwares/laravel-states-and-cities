@@ -25,9 +25,9 @@ class CountriesApiV1Controller extends Controller {
 
     public function update(Request $request, $id)
     {
-        $input = $request->all();
         $country = Country::find($id);
-        return $country->update($input);
+        $country->update($request->all());
+        return $country;
     }
 
     public function destroy($id)

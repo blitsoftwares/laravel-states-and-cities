@@ -31,9 +31,9 @@ class StatesApiV1Controller extends Controller
 
     public function update(Request $request, $id)
     {
-        $input   = $request->all();
-        $country = State::find($id);
-        return $country->update($input);
+        $state = State::find($id);
+        $state->update($request->all());
+        return $state;
     }
 
     public function destroy($id)
