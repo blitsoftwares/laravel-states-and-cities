@@ -49,5 +49,5 @@ return [
     /*
      * ROUTES MIDDLEWARE API
      */
-    "route_middleware_api" => ['auth:api']
+    "route_middleware_api" => ['auth:api','bindings']
 ];
