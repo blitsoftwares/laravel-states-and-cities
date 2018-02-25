@@ -13,6 +13,17 @@ class State extends Model {
         'code'
     ];
 
+    public function scopeCode($query,$code)
+    {
+        if (is_numeric($code)){
+            $qry = $query->where('id',$code);
+        } elseif (is_string($code)) {
+            $qry = $query->where('code',$code);
+        }
+
+        return $qry;
+    }
+
     public function scopeByCountry($query,$country)
     {
         return $query->where('country_id',$country);
